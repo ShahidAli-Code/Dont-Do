@@ -40,15 +40,16 @@ taskList.addEventListener('click',function(e) {
     if(e.target.tagName === 'LI') {
         e.target.classList.toggle('checked');
         saveData()
-    }else if(e.target.tagName === 'SPAN') {
-        e.target.parentElement.remove();
-        saveData()
+    }else if (e.target.tagName === 'SPAN') {
+        if (confirm("Are you sure you want to delete this?")) {
+            e.target.parentElement.remove();
+            saveData();
+        }
     }else if (e.target.classList.contains('fa-pen')) {
         let li = e.target.parentElement;
         let existingText = li.childNodes[0].textContent.trim(); // Get task text
         let deleteButton = li.querySelector("span"); // Store delete button
-        let penIcon = e.target; // Store edit icon
-    
+        let penIcon = e.target; 
         let input = prompt('Edit task', existingText);
         
         if (input) {
