@@ -1,0 +1,244 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#153677,#4e085f) !important;
+}
+
+.main{
+    background: linear-gradient(135deg,#153677,#4e085f);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 5rem; */
+}
+
+.to-do{
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.to-do h1{
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #002765;
+}
+
+.to-do i{
+    color: burlywood;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    background:#edeef0;
+    border-radius:50PX;
+    /* padding-left: 1rem; */
+}
+
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    background: transparent;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 1rem 2rem;
+    background: #002765;
+    color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    &:hover{
+        background: #001f4a;
+        transition: background 0.3s ease;
+        color: #fff;
+    }
+}
+
+ul li{
+    list-style: none;
+    margin-bottom: 1rem;
+    font-size: medium;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before{
+    content: "\f1ce";  /* Unicode for fa-circle-notch */
+        font-family: "Font Awesome 6 Free"; /* Font Awesome font */
+        font-weight: 900; /* Needed for solid icons */
+        font-size: 30px;
+        color: blue;
+        position: absolute;
+        top: 5px;
+        left: 10px;
+}
+
+
+.checked{
+    text-decoration: line-through;
+    color: #999;
+}
+
+.checked::before{
+    content: "\f058";  /* Unicode for fa-circle-check */
+    font-family: "Font Awesome 6 Free"; /* Font Awesome font */
+    font-weight: 900; /* Needed for solid icons */
+    font-size: 30px;
+    color: green;
+}
+
+ul li span{
+    position: absolute;
+    right :0;
+    top: 1px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color:#001f4a;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    &:hover{
+        background: #001f4a;
+        color: #fff;
+        transition: background 0.3s ease;
+    }
+}
+
+.fa-pen{
+    position: absolute;
+    /* width: 40px;
+    height: 40px; */
+    font-size: 16px;
+    color:#001f4a;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    right: 40px;
+    top: 1px;
+    padding: 12px;
+    &:hover{
+        background: #001f4a;
+        color: #fff !important;
+        transition: background 0.3s ease;
+    }
+}
+
+@media screen and (max-width: 680px){
+    body,html{
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .main{
+        /* background-color: green; */
+        height: 100%;
+        display: flex ;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        /* margin: auto !important; */
+        /* padding-left: 0; */
+        width: 100%;
+
+    }
+
+    .to-do{
+        width: 100%;
+        /* background-color: red; */
+        /* margin:auto;
+        height: auto; */
+        position: absolute;
+        /* left: 5rem; */
+
+    }
+    .row{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* background-color: blue; */
+        width: 100%;
+        height: 50%;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+        /* padding-left: 0%; */
+        input{
+            background-color: #fff;
+            border-radius: 50px;
+            width: 90%;
+            /* height: 5rem; */
+            /* padding:1rem; */
+            margin: 1rem 2rem;
+            text-align: center;
+            font-size: 16px;
+        }
+        button{
+            margin-top: .9rem;
+            margin-bottom: 1rem;
+    }
+
+}
+
+.fa-pen{
+    right: 2.5rem;
+    top:.4rem;
+    /* padding: 0; */
+    font-size: large;
+    background-color: none;
+}
+.fa-pen:hover{
+   background-color: burlywood;
+}
+
+ul li span{
+    font-size: 2rem !important;
+    /* padding-left: 10px; */
+    right: .2rem;
+    top:.3rem;
+}
+
+ul li span:hover{
+    background-color:burlywood !important;
+    color: #fff;
+}
+
+ul li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom:1rem;
+}
+
+ul li::before{
+    content: "\f1ce";  /* Unicode for fa-circle-notch */
+        font-family: "Font Awesome 6 Free"; /* Font Awesome font */
+        font-weight: 900; /* Needed for solid icons */
+        font-size: 2rem;
+        color: blue;
+        position: absolute;
+        top: 8px;
+            }
+
+}
